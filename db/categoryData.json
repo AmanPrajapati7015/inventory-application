@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Adventure",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714206604/6a7ad902-8c8b-4760-9426-3091f1263800-Adventure.jpg",
+        "desc": "Embark on an unforgettable journey with adventure games! These titles weave captivating stories, placing you in the role of a protagonist who unravels mysteries, explores vibrant worlds, and interacts with memorable characters. Prepare to solve puzzles, overcome environmental challenges, and make choices that impact the narrative."
+    }, 
+    {
+        "name": "Action",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714206539/7dcaf5a7-c8da-4df1-b56c-402015935844-Action.jpg",
+        "desc": "Get your adrenaline pumping with action games! These fast-paced titles put you right in the thick of the action, challenging your reflexes and combat skills. You'll face off against waves of enemies, overcome dangerous obstacles, and master intricate combat mechanics. From intense gunfights in war-torn landscapes to thrilling sword duels in fantastical realms, action games offer a diverse range of experiences."
+    }, 
+    {
+        "name": "Fantasy",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714471473/2b7e3215-1edf-4902-b992-bb3c20607728-skyrim-4.avif",
+        "desc": "Escape to fantastical realms filled with magic, mythical creatures, and epic lore with fantasy games! These titles transport you to worlds beyond your imagination, where you might wield powerful spells, command legendary beasts, and explore breathtaking landscapes. Prepare to battle fearsome monsters, delve into ancient dungeons, and embark on heroic quests."
+    }, 
+    {
+        "name": "Open World",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714472182/742c09a1-d5c2-4eb2-ad0e-e2c678518a9a-0veewc8x806c1.jpg",
+        "desc": "Explore vast, sprawling environments with open world games! These titles offer a sense of freedom and limitless possibilities. Traverse sprawling landscapes, discover hidden locations, and tackle objectives at your own pace. You might forge your own path through the story, complete side quests, or simply get lost in the beauty and detail of the world."
+    }, 
+    {
+        "name": "Puzzle",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714472855/843ea89d-26b1-4756-8244-3d6b75f3691e-xavi-cabrera-kn-UmDZQDjM-unsplash.jpg",
+        "desc": "Test your logic and problem-solving skills with puzzle games! These titles present a variety of challenges that require you to think creatively and strategically. You might manipulate objects, solve spatial puzzles, or decipher cryptic clues to progress. Puzzle games come in all shapes and sizes, offering a satisfying mental workout for players of all skill levels."
+    }, 
+    {
+        "name": "RPG",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1722763710/ba3500f8-691b-4bf7-8d24-ceced1e95a44-RPG_Game-512.webp",
+        "desc": "Role-playing game, in which players act out the roles of characters in a narrative game"
+    }, 
+    {
+        "name": "Racing",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714206815/fb2d5093-7fbf-49c6-a5cb-15e44d0e32b9-Racing.jpg",
+        "desc": "Strap yourself in and get ready for the checkered flag with racing games! These titles put you behind the wheel (or handlebars) of high-performance vehicles, challenging you to master courses, outmaneuver opponents, and achieve racing glory. Experience the thrill of speed as you race on diverse tracks, compete in online leaderboards, and customize your vehicles for peak performance."
+    }, 
+    {
+        "name": "Shooter",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714472477/152a823c-f304-4d3c-9f0d-f17bcd62da59-MV5BMDJmYWQxMTMtNDg4NC00OTRhLWI4NGQtMGE0OGY1ZGExMmI0XkEyXkFqcGdeQXVyNDQxOTY2NDQ___V1_.jpg",
+        "desc": "Sharpen your aim and prepare for intense combat with shooter games! These titles place you in the shoes of a soldier, mercenary, or other combatant, tasked with completing objectives by eliminating enemies. Master a variety of weapons, utilize different tactics, and navigate intense firefights. From futuristic battles to historical warfare, shooter games offer a range of experiences for every taste."
+    }, 
+    {
+        "name": "Simulation",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714472641/cb58cab3-0765-405d-a2e1-f495f377e9d3-3wEiZ7uALRKZov9DDxtBfM.jpg",
+        "desc": "Step into the shoes of someone else with simulation games! These titles aim to recreate real-world experiences in a detailed and immersive way. You might take control of a vehicle like a flight simulator or manage a complex system like a city builder. Simulation games can be both educational and entertaining, allowing you to learn new skills and experience life from a different perspective."
+    }, 
+    {
+        "name": "Sports",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714472990/cb9e06bd-9586-4900-a20d-9fcf72c870f9-imf6h0igxrk4hnmkcafx.jpg",
+        "desc": "Hit the field, court, or track with sports games! These titles recreate the excitement and challenge of various sports, allowing you to compete against AI opponents or other players. Experience the thrill of competition, master the nuances of your chosen sport, and build your dream team. You can relive historic moments in sports history, compete in online leagues, or simply have fun playing a casual match."
+    }, 
+    {
+        "name": "Strategy",
+        "imgURL": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714405478/4489a9b0-5565-485d-a879-473239caa6f5-Strategy.avif",
+        "desc": "Challenge your mind and test your tactical prowess with strategy games! These titles place you in control of resources, armies, or empires, tasking you with making strategic decisions to outsmart your opponents and achieve victory. You might build sprawling empires, command vast armies in real-time battles, or manage complex economies. Strategy games offer a deep and rewarding experience for players who enjoy planning, resource management, and outwitting their foes."
+    }
+]
