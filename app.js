@@ -1,9 +1,14 @@
 const  express = require('express');
 
 const app = express();
+app.set('view engine', 'ejs'); 
 
 app.get('/', (req, res)=>{
     res.send('hello world');
+})
+
+app.get('/items', (req, res)=>{
+    res.render('items');
 })
 
 

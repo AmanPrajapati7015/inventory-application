@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Grand Theft Auto III",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381030/12dedd01-1b7d-4161-b186-43d9ecd9a8f7-GTA3_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381034/54dd0acf-599d-4d3e-9f5a-58636200db3d-GTA3_hero.jpg",
+        "disc": "Welcome to Liberty City. Where it all began. The critically acclaimed blockbuster Grand Theft Auto III brings to life the dark and seedy underworld of Liberty City. With a massive and diverse open world, a wild cast of characters from every walk of life, and the freedom to explore at will, Grand Theft Auto III puts the dark, intriguing, and ruthless world of crime at your fingertips.",
+        "price":299,
+        "rating": "4.3",
+        "publisher": "Rockstar games",
+        "release_date" : "2001-10-22",
+        "stock":1000
+    },
+    {
+        "name": "Grand Theft Auto IV",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714380902/ca2caef5-c861-453c-a342-18bf46b98687-GTAIV_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714380904/d9fc820b-223b-4266-9e68-3e1a42fa2bb2-GTAIV_hero.jpg",
+        "disc": "What does the American Dream mean today? For Niko Bellic, fresh off the boat from Europe, it is the hope he can escape his past. For his cousin, Roman, it is the vision that together they can find fortune in Liberty City, gateway to the land of opportunity. As they slip into debt and are dragged into a criminal underworld by a series of shysters, thieves, and sociopaths, they discover that the reality is very different from the dream in a city that worships money and status.",
+        "price":2333,
+        "rating": "4.5",
+        "publisher": "Rockstar games",
+        "release_date" : "2008-04-29",
+        "stock":25000
+    },
+    {
+        "name": "Grand Theft Auto V",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714378087/cf03bf3b-87ef-4dd3-bb09-7ad3c5349cbf-GTAV_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714463104/1c8375b1-5994-45ff-a435-6f3b1b185829-GTAV_hero.jpg",
+        "disc": "Welcome to Los Santos. When a young street hustler, a retired bank robber, and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government, and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody — least of all each other.",
+        "price":1299,
+        "rating": "4.4",
+        "publisher": "Rockstar games",
+        "release_date" : "2013-09-17",
+        "stock":100000
+    },
+    {
+        "name": "Grand Theft Auto San Andreas",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714380739/4a92454e-aa4d-4c2c-936c-fe992e067b67-GTASA_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714380742/19fc9eb1-ebff-4ed3-9643-b484a2bdf84d-GTASA_hero.jpg",
+        "disc": "Five years ago Carl Johnson escaped from the pressures of life in Los Santos, San Andreas — a city tearing itself apart with gang trouble, drugs, and corruption. Where film stars and millionaires do their best to avoid the dealers and gangbangers.",
+        "price":699,
+        "rating": "4.2",
+        "publisher": "Rockstar games",
+        "release_date" : "2004-10-26",
+        "stock":6000
+    },
+    {
+        "name": "L.A. Noire",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381187/74ab4fb8-5dbb-4440-94d0-a8af848f6577-LANoire_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381190/9fb9ac2d-1709-4370-a3e9-4c1c19503c10-LANoire_hero.jpg",
+        "disc": "Amid the post-war boom of Hollywood's Golden Age, Cole Phelps — an LAPD detective — is thrown headfirst into a city drowning in its own success. Corruption is rampant, the drug trade is exploding, and murder rates are at an all-time high. In his fight to climb the ranks and do what's right, Phelps must unravel the truth behind a string of arson attacks, racketeering conspiracies, and brutal murders, battling the L.A. underworld and even members of his own department.",
+        "price":1499,
+        "rating": "3.9",
+        "publisher": "Rockstar games",
+        "release_date" : "2011-05-17",
+        "stock":10423
+    },
+    {
+        "name": "Max Payne",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381377/1a36de17-a536-4f86-8f3e-ff2d754d442a-Max_Payne_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714381381/f357365b-30da-40d8-810d-31445157b80a-Max_Payne_hero.jpg",
+        "disc": "asdfaMax Payne is a man with nothing to lose in the violent, cold, urban night. A fugitive undercover cop framed for murder, and now hunted by cops and the mob. Max is a man with his back against the wall, fighting a battle he cannot hope to win. Prepare for a new breed of deep action game. Prepare for pain... It is a relentless story-driven game about a man on the edge, fighting for his justice while uncovering plot twists and twisted thugs in the gritty bowels of New York.",
+        "price":399,
+        "rating": "4.5",
+        "publisher": "Rockstar games",
+        "release_date" : "2001-07-23",
+        "stock":15
+    },
+    {
+        "name": "Max Payne 3",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714464097/f462274e-300f-41f0-9ae4-0b39b0c15e41-ba94346e4b206acc56976b59974bffbe.png",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714464099/6e0e23db-03f0-471f-a4d8-b6613038a573-maxpayne3.jpg",
+        "disc": "For Max, the tragedies that took his loved ones years ago are wounds that refuse to heal. No longer a cop, close to washed up, and addicted to pain killers, he takes a job in São Paulo, Brazil, protecting the family of wealthy real estate mogul Rodrigo Branco in an effort to finally escape his troubled past. But as events spiral out of his control, Max Payne finds himself alone on the streets of an unfamiliar city, desperately searching for the truth and fighting for a way out.",
+        "price":1055,
+        "rating": "4.8",
+        "publisher": "Rockstar games",
+        "release_date" : "2012-05-15",
+        "stock":1000
+    },
+    {
+        "name": "Read Dead Redemption",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714380360/71420f6e-5821-4e18-9958-79b3220ae1ff-RDR_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714463482/614f1e87-ea5a-4da6-aaae-b86cd6e3ae0b-rdr.webp",
+        "disc": "When federal agents threaten his family, former outlaw John Marston is forced to hunt down the gang of criminals he once called friends. Step into the events immediately following the 2018 blockbuster, Red Dead Redemption 2, in the critically acclaimed tale of Marston’s journey to bury his blood-stained past, one man at a time.",
+        "price":3424,
+        "rating": "4.7",
+        "publisher": "Rockstar games",
+        "release_date" : "2010-05-18",
+        "stock":3400
+    },
+    {
+        "name": "Read Dead Redemption 2",
+        "logo_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714379808/4e5b50d2-88a2-48ed-af00-24f06cbb97ef-RDR2_logo.svg",
+        "cover_img_url": "https://res.cloudinary.com/dmt9s5xlh/image/upload/v1714454789/b20a3c2b-9983-430d-afca-24a37ac63a21-RDR2_hero_alt.jpg",
+        "disc": "America, 1899. The end of the Wild West era has begun. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice.",
+        "price":2599,
+        "rating": "4.8",
+        "publisher": "Rockstar games",
+        "release_date" : "2018-10-26",
+        "stock":10000
+    }
+]
