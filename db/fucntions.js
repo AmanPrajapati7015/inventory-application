@@ -10,7 +10,11 @@ async function getGames() {
     return rows;
 }
 
+async function getGameById(id) {
+    const {rows} = await pool.query('SELECT * FROM items where id=$1', [id]);
+    return rows[0];
+} 
 
 
 
-module.exports = {getGames}
+module.exports = {getGames, getGameById}

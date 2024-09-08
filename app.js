@@ -1,5 +1,5 @@
 const  express = require('express');
-const { getGames } = require('./db/fucntions');
+const { getGames, getGameById } = require('./db/fucntions');
 
 const app = express();
 app.set('view engine', 'ejs'); 
@@ -17,9 +17,10 @@ app.get('/games', async (req, res)=>{
 
 app.get('/games/game-page/:id', async(req, res)=>{
     const id = req.params.id;
-    res.send(id);
+    const game = await getGameById(+id);
+    
+    res.render('game-page', game);
 })
-
 
 app.listen(3000, ()=>{
     console.log('server running on port 3000');
