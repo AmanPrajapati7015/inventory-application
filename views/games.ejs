@@ -11,8 +11,10 @@
     <div class="games">
         <% locals.games.forEach(game => {%>
             <a href="/games/game-page/<%= game.id %>">
-                <div class="game" >
-                    <img src="<%= game.logo_img_url %>" alt="<%game.name%>">
+                <div class="game" style="background-image: url('<%= game.cover_img_url%>');">
+                    <div class="black-tint">
+                        <h2><%= game.name %></h2>
+                    </div>
                 </div>
             </a>
         <% }); %>
