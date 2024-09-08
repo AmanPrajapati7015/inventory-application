@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="/styles/games.css">
+</head>
+<body>
+    <h1>Game list</h1> 
+    <div class="games">
+        <% locals.games.forEach(game => {%>
+            <a href="/games/game-page/<%= game.id %>">
+                <div class="game" >
+                    <img src="<%= game.logo_img_url %>" alt="">
+                </div>
+            </a>
+        <% }); %>
+    </div>
+</body>
+</html>
