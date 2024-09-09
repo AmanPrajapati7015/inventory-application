@@ -2,6 +2,7 @@ require('dotenv').config();
 const pg = require('pg');
 const categoryData = require('./categoryData.json');
 const itemsData = require('./itemsData.json');
+const connectionData = require('./connectionData.json');
 
 //connecting to database
 const pool = new pg.Pool({
@@ -63,4 +64,30 @@ const pool = new pg.Pool({
         })
         console.log(`inserted ${itemsData.length} values in items table`);
     }
+
+
+    //creating table connection
+    await pool.query(
+        `CREATE TABLE IF NOT EXISTS game_category (
+            game_id INTEGER,
+            category_id INTEGER,
+            PRIMARY KEY (game_id, category_id),
+            FOREIGN KEY (game_id) REFERENCES items(id),
+            FOREIGN KEY (category_id) REFERENCES category(id)
+        );`
+    )
+    console.log('created table game_category');
+
+    //populating category table
+    const resp =  await pool.query('SELECT * FROM game_category');
+    if(resp.rows.length==0){
+        connectionData.forEach( async (row)=>{
+            await pool.query(
+                `INSERT INTO game_category VALUES ($1, $2)`, 
+                [row.game_id, row.category_id]
+            );
+        });
+        console.log(`inserted ${connectionData.length} values in items table`);
+    }
+
 })();
