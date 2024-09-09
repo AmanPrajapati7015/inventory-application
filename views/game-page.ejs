@@ -14,9 +14,13 @@
         <img src="<%= locals.logo_img_url %>" height="40px" alt="<%=locals.name%>">
         <p><%=locals.disc%></p>
         <div class="categories">
-                
+            <% locals.category.forEach(cate => {%>
+                <a href="/category/<%= cate.id %>">
+                    <button class="category"><%= cate.name %></button>
+                </a>
+            <% }); %>
         </div>
-        <h2>$ <%=locals.price%></h2>
+        <h2>₹ <%=locals.price%></h2>
         <p><strong>Rating : </strong><%=locals.rating%></p>
         <p><strong>Publisher : </strong><%=locals.publisher%></p>
         <p><strong>Released : </strong><%=locals.release_date%></p>

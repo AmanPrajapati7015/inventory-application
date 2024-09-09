@@ -11,8 +11,18 @@ async function getGames() {
 }
 
 async function getGameById(id) {
-    const {rows} = await pool.query('SELECT * FROM items where id=$1', [id]);
-    return rows[0];
+    const {rows : game_rows} = await pool.query('SELECT * FROM items where id=$1',[id]);
+
+    const {rows : category} = await pool.query(
+        `select category.id, category.name from items 
+        join game_category ON game_category.game_id = items.id
+        join category on game_category.category_id = category.id
+        where items.id = $1;`, 
+        [id]);
+
+    let game = { ...game_rows[0], category}
+    
+    return game;
 } 
 
 
