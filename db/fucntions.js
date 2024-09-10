@@ -25,6 +25,20 @@ async function getGameById(id) {
     return game;
 } 
 
+async function getCategoryById(id) {
+    const {rows : category_rows} = await pool.query('SELECT * FROM category where id=$1',[id]);
+
+    const {rows : games} = await pool.query(
+        `select items.id, items.name, items.logo_img_url from items 
+        join game_category ON game_category.game_id = items.id
+        join category on game_category.category_id = category.id
+        where category.id = $1;`, 
+        [id]);
+
+    let category = { ...category_rows[0], games}
+    return category;
+}
 
 
-module.exports = {getGames, getGameById}
+
+module.exports = {getGames, getGameById, getCategoryById}
