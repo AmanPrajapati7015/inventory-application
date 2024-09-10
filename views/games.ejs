@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
-    <link rel="stylesheet" href="/styles/games.css">
+    <link rel="stylesheet" href="/styles/grid.css">
 </head>
 <body>
     <h1>Game list</h1> 
-    <div class="games">
+    <div class="container">
         <% locals.games.forEach(game => {%>
             <a href="/games/game-page/<%= game.id %>">
-                <div class="game" style="background-image: url('<%= game.cover_img_url%>');">
+                <div class="card" style="background-image: url('<%= game.cover_img_url%>');">
                     <div class="black-tint">
                         <h2><%= game.name %></h2>
                     </div>

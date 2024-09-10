@@ -39,6 +39,11 @@ async function getCategoryById(id) {
     return category;
 }
 
+async function getCategories() {
+    const {rows} = await pool.query('SELECT id, name, imgurl from category');
+    return rows;
+}
 
 
-module.exports = {getGames, getGameById, getCategoryById}
+
+module.exports = {getGames, getGameById, getCategoryById, getCategories}
