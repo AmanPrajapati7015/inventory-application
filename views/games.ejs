@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/grid.css">
 </head>
 <body>
-    <h1>Game list</h1> 
+    <%- include('navbar') %>
     <div class="container">
         <% locals.games.forEach(game => {%>
             <a href="/games/game-page/<%= game.id %>">

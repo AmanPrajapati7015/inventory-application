@@ -1,0 +1,17 @@
+<% const links = [
+    {link:'/games', text:'Games'},
+    {link:'/category', text:'Categories'},
+    {link:'/', text:'Home'},
+    {link:'/', text:'New category'},
+    {link:'/', text:'New game'}
+] %>
+
+<nav>
+    <ul>
+        <% links.forEach((link,i)=>{ %>
+            <li class='<%= link.link == locals.active ? 'active' : '' %>' >
+                <a href="<%= link.link %>"><%= link.text %></a>
+            </li>
+        <% }) %>
+    </ul>
+</nav>

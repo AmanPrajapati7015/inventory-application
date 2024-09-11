@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=locals.name%></title>
+    <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/category-page.css">
 </head>
 <body>
-    <img class="cover" src="<%= locals.imgurl %>" alt="">
-    <h1><%= locals.name %></h1>
-    <p><%= locals.disc %></p>
-    <h2>Items</h2>
-    <div class="games">
-        <% locals.games.forEach(game =>{ %>
-            <a href="/games/game-page/<%= game.id %>">
-                <div class="game">
-                    <img src="<%= game.logo_img_url %>" alt="<%= game.name %>">
-                </div>
-            </a>
-        <%}) %>
-    </div>
+    <%- include('navbar') %>
+    <section class="main">
+        <img class="cover" src="<%= locals.imgurl %>" alt="">
+        <h1><%= locals.name %></h1>
+        <p><%= locals.disc %></p>
+        <h2>Items</h2>
+        <div class="games">
+            <% locals.games.forEach(game =>{ %>
+                <a href="/games/game-page/<%= game.id %>">
+                    <div class="game">
+                        <img src="<%= game.logo_img_url %>" alt="<%= game.name %>">
+                    </div>
+                </a>
+            <%}) %>
+        </div>
+    </section>
 </body>
 </html>

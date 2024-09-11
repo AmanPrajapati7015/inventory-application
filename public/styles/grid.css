@@ -1,23 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color: #121212;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+.container{
     max-width: 1200px;
     margin: auto;
-    padding: 40px;
-}
-
-a{
-    text-decoration: none;
-    color: white
-}
-
-.container{
     padding: 20px;
     display: grid;
     align-items: stretch;
@@ -27,7 +10,7 @@ a{
 }
 
 .card{
-    height: 200px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;

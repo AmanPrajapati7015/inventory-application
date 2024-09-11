@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/grid.css">
 </head>
 <body>
-    <h1>Categories</h1> 
+    <%- include('navbar', {active:'/category'}) %>
     <div class="container">
         <% locals.categories.forEach(category => {%>
             <a href="/category/<%= category.id %>">
