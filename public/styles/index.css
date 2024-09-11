@@ -12,9 +12,9 @@ body{
 
 nav{
     max-width: 1200px;
-    padding: 20px; 
     box-sizing: border-box;
     margin: auto;
+    padding: 20px; 
     position: sticky;
     top: 0;
     backdrop-filter: blur(10px);
@@ -45,3 +45,31 @@ a{
     color: white
 }
 
+footer{
+    margin-top: 80px;
+}
+
+footer .info{
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .info a{
+    color: rgb(0, 162, 255);
+}
+
+footer .design{
+    width: 100%
+    /* overflow: hidden; */
+}
+
+footer .design img{
+    width: 100%;
+    transform : rotate(180deg);
+    position: relative;
+    bottom: 0;
+}

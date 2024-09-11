@@ -26,8 +26,7 @@ app.listen(3000, ()=>{
 
 
 // todo
-// 1. make a navbar 
-// 2. make a footer
 // 4. make add new category
 // 5. make add new game
 // 6. make a homepage
+// 1. design a navbar for mobile phone
