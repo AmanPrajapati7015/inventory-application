@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new game</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/add-new-form.css">
+</head>
+
+<body>
+    <%- include('navbar', {active:'/games/add-new'}) %>
+    <section class="main">
+        <h1>Add new game</h1>
+        <form action="/games/add-new" method="post">
+            <div class="feild">
+                <label for="name">Name*</label>
+                <input type="text" name="name" id="name" placeholder="Grand Theft Auto, etc">
+            </div>
+            
+            <div class="feild">
+                <label for="desc">Description*</label>
+                <textarea name="disc" id="desc" rows="8" placeholder="Some description about the game"></textarea>
+            </div>
+
+            <div class="feild">
+                <label>Categories*</label>
+                <div class="categories">
+                    <% locals.categories.forEach(category=>{ %>
+                        <div class="category">
+                            <input type="checkbox" id="<%=category.name%>" value="<%=category.id%>" name="category[]">
+                            <label for="<%=category.name%>"><%=category.name%></label>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            
+            <div class="feild">
+                <label for="price">Price*</label>
+                <input type="number" name="price" id="price" placeholder="Price in Rupees" min="0">
+            </div>
+            
+            <div class="feild">
+                <label for="stock">Stock*</label>
+                <input type="number" name="stock" id="stock" placeholder="Number of items in stock" min="0">
+            </div>
+            
+            <div class="feild">
+                <label for="titleLogo">Title Logo URL*</label>
+                <input type="url" name="logo_img_url" id="titleLogo" placeholder="URL for the title logo">
+            </div>
+            
+            <div class="feild">
+                <label for="heroLogo">Hero Logo URL*</label>
+                <input type="url" name="cover_img_url" id="heroLogo" placeholder="URL for the hero logo">
+            </div>
+            
+            <div class="feild">
+                <label for="publisher">Publisher*</label>
+                <input type="text" name="publisher" id="publisher" placeholder="Publisher Name">
+            </div>
+            
+            <div class="feild">
+                <label for="releaseDate">Release Date*</label>
+                <input type="date" name="release_date" id="releaseDate">
+            </div>
+            
+            <div class="feild">
+                <label for="rating">Rating*</label>
+                <input type="number" name="rating" id="rating" placeholder="Rating (0-10)" step="0.1" min="0" max="10">
+            </div>
+            
+            <div class="feild">
+                <label for="password">Password*</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </section>
+    <%- include('footer')%>
+</body>
+
+</html>

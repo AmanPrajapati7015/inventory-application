@@ -1,0 +1,64 @@
+section.main{
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+section.main h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form > .feild{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form > .feild >label{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+form > .feild > input, textarea{
+    padding: 8px;
+    background-color: rgb(40, 40, 40);
+    font-size: 1rem;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.category{
+    width: 150px;
+}
+
+
+button.submit{
+    color: purple;
+    background: none;
+    border: 1px solid purple;
+    padding: 6px 12px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button.submit:hover{
+    background-color: purple;
+    color: white;
+}
