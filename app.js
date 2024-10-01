@@ -29,5 +29,7 @@ app.listen(3000, ()=>{
 // todo
 // 4. make add new category
 // 5. make add new game
+//      2. once validated update the data in database
 // 6. make a homepage
 // 1. design a navbar for mobile phone
+// 7. show no games if there are no games in a category.

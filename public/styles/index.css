@@ -11,14 +11,20 @@ body{
 }
 
 nav{
-    max-width: 1200px;
+    width: 100vw;
     box-sizing: border-box;
     margin: auto;
     padding: 20px; 
     position: sticky;
     top: 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     background-color: #12121276;
+    z-index: 1;
+}
+
+nav .content{
+    max-width: 1200px;
+    margin: auto;
 }
 
 nav ul{
@@ -29,6 +35,7 @@ nav ul{
 }
 
 nav ul li{
+    list-style: none;
     padding-bottom: 10px;
 }
 
@@ -36,9 +43,6 @@ nav ul li.active{
     border-bottom: 1px solid white;
 }
 
-li{
-    list-style: none;
-}
 
 a{
     text-decoration: none;
@@ -63,13 +67,10 @@ footer .info a{
 }
 
 footer .design{
-    width: 100%
-    /* overflow: hidden; */
+    /* background-color: blue; */
 }
 
 footer .design img{
     width: 100%;
     transform : rotate(180deg);
-    position: relative;
-    bottom: 0;
 }

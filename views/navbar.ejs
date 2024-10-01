@@ -7,11 +7,13 @@
 ] %>
 
 <nav>
-    <ul>
-        <% links.forEach((link,i)=>{ %>
-            <li class='<%= link.link == locals.active ? 'active' : '' %>' >
-                <a href="<%= link.link %>"><%= link.text %></a>
-            </li>
-        <% }) %>
-    </ul>
+    <div class="content">
+        <ul>
+            <% links.forEach((link,i)=>{ %>
+                <li class='<%= link.link == locals.active ? 'active' : '' %>' >
+                    <a href="<%= link.link %>"><%= link.text %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 </nav>

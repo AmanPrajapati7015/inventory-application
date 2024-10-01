@@ -1,5 +1,7 @@
 const express = require('express');
 const { getGames, getGameById, getCategories} = require('../db/fucntions');
+const addNewGameValidator = require('../utils/new-game-validator');
+const {validationResult} = require('express-validator');
 
 
 const router = express.Router();
@@ -21,10 +23,21 @@ router.get('/add-new', async(req, res)=>{
     res.render('add-new-game', {categories}); 
 })
 
-router.post('/add-new', async (req, res)=>{
+router.post('/add-new',addNewGameValidator, async (req, res)=>{
+    const result = validationResult(req);
+    const categories = await getCategories();
+    
+    if(result.errors.length == 0){
+        console.log(result);
+        res.send('added');
+    }
+    else{
+        console.log(result.errors);
 
-    console.log(req.body);
-    res.send('added');
+        // res.send(result.errors)
+        
+        res.render('add-new-game', {...req.body, errors:result.errors, categories});
+    }
 }) 
 
 
