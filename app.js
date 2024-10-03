@@ -1,6 +1,7 @@
 const  express = require('express');
 const gameRouter = require('./routes/gameRouter');
 const categoryRouter = require('./routes/categoryRouter');
+const { render } = require('ejs');
 
 
 
@@ -19,6 +20,13 @@ app.use('/games', gameRouter);
 
 app.use('/category', categoryRouter);
 
+app.get('*', (req, res, next)=>{
+    next(new Error('Invalid URL'))
+})
+
+app.use((err, req, res, next)=>{
+    res.render('error', {errorMsg:err.message});
+})
 
 
 app.listen(3000, ()=>{
@@ -28,8 +36,5 @@ app.listen(3000, ()=>{
 
 
 // todo
-// 4. make add new category
 // 6. make a homepage
 // 1. design a navbar for mobile phone
-// 7. show no games if there are no games in a category.
-// 8. make a error page and display in all invalid url out of bound ids (copy it from other project)

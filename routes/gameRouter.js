@@ -12,11 +12,11 @@ router.get('/', async (req, res)=>{
     res.render('games', {games, active:'/games'});
 })
 
-router.get('/game-page/:id', async(req, res)=>{
+router.get('/game-page/:id', async(req, res, next)=>{
     const id = req.params.id;
     const game = await getGameById(+id);
     if(!game.id)
-        res.send('error');
+        next(new Error('invalid game id'));
     else
         res.render('game-page', game);
 })

@@ -1,0 +1,54 @@
+.error-section{
+    margin: 0 100px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+body{
+    background-image: none;
+    background-color: black;
+    color: white;
+}
+
+.error-section .right{
+    width: 600px;
+}
+
+.error-section .left{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-section h1{
+    font-size: 4rem;
+}
+.error-section h2{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.error-section a{
+    margin-top: 20px;
+}
+.error-section button{
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+#space{
+    width: 100%;
+    object-fit: fill;
+}

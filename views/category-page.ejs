@@ -15,13 +15,17 @@
         <p><%= locals.disc %></p>
         <h2>Items</h2>
         <div class="games">
-            <% locals.games.forEach(game =>{ %>
-                <a href="/games/game-page/<%= game.id %>">
-                    <div class="game">
-                        <img src="<%= game.logo_img_url %>" alt="<%= game.name %>">
-                    </div>
-                </a>
-            <%}) %>
+            <% if (locals.games.length == 0 ) { %>
+                <h3>No games in this category yet</h3>
+            <% } else { %>
+                <% locals.games.forEach(game =>{ %>
+                    <a href="/games/game-page/<%= game.id %>">
+                        <div class="game">
+                            <img src="<%= game.logo_img_url %>" alt="<%= game.name %>">
+                        </div>
+                    </a>
+                <%}) %>
+            <% }%>
         </div>
     </section>
     <%- include('footer')%>

@@ -13,11 +13,11 @@ router.get('/', async(req, res)=>{
 })
 
 // category-page -- to show a category in details
-router.get('/category-page/:id', async(req, res)=>{
+router.get('/category-page/:id', async(req, res, next)=>{
     const id = req.params.id;
     const category = await getCategoryById(id);
     if(!category.id)
-        res.send('error');
+        next(new Error('invalid category id'));
     else
         res.render('category-page', category);
 })
