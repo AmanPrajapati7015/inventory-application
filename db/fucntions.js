@@ -2,7 +2,6 @@ require('dotenv').config();
 const {Pool} = require('pg');
 
 const pool = new Pool({connectionString: process.env.CONNECTION_STRING});
-// console.log(process.env.CONNECTION_STRING);
 
 
 async function getGames() {
@@ -42,10 +41,13 @@ async function addGame({name,disc,category,price,stock,logo_img_url,cover_img_ur
         await pool.query('insert into game_category (game_id, category_id) values ($1, $2)', [game_id, category[category_id]]);
     }
 
-    console.log(game_id);
     return game_id;
 }
 
+
+
+
+// category database queries
 async function getCategoryById(id) {
     const {rows : category_rows} = await pool.query('SELECT * FROM category where id=$1',[id]);
 
@@ -65,7 +67,14 @@ async function getCategories() {
     return rows;
 }
 
+async function addCategory({name, disc, img_url}) {
+    await pool.query('insert into category (name, imgurl, disc) VALUES ($1, $2, $3)', [name, img_url, disc]);
+
+    // extract the unique id of game
+    const { rows : selectRows} = await pool.query('select id from category where name=$1 and disc=$2', [name, disc]);
+    const category_id = selectRows[0].id;
+    return category_id;
+}
 
 
-
-module.exports = {getGames, getGameById, getCategoryById, getCategories,addGame}
+module.exports = {getGames, getGameById, getCategoryById, getCategories,addGame, addCategory}

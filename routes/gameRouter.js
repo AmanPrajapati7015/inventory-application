@@ -1,6 +1,6 @@
 const express = require('express');
 const { getGames, getGameById, getCategories, addGame} = require('../db/fucntions');
-const addNewGameValidator = require('../utils/new-game-validator');
+const addNewGameValidator = require('../utils/game-validator');
 const {validationResult} = require('express-validator');
 
 
@@ -22,6 +22,7 @@ router.get('/game-page/:id', async(req, res)=>{
 })
 
 router.get('/add-new', async(req, res)=>{
+    // get available categoies to make list of selection batch
     const categories = await getCategories();
     res.render('add-new-game', {categories}); 
 })
@@ -35,7 +36,7 @@ router.post('/add-new',addNewGameValidator, async (req, res)=>{
         res.redirect('/games/game-page/'+id);
     }
     else{
-        console.log(result.errors);        
+        console.log(result.errors);
         res.render('add-new-game', {...req.body, errors:result.errors, categories});
     }
 }) 

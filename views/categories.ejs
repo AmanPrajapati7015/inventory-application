@@ -11,7 +11,7 @@
     <%- include('navbar', {active:'/category'}) %>
     <div class="container">
         <% locals.categories.forEach(category => {%>
-            <a href="/category/<%= category.id %>">
+            <a href="/category/category-page/<%= category.id %>">
                 <div class="card" style="background-image: url('<%= category.imgurl%>');">
                     <div class="black-tint">
                         <h2><%= category.name %></h2>

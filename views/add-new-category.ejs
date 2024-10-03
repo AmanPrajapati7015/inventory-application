@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new game</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/add-new-form.css">
+</head>
+
+<body>
+    <%- include('navbar', {active:'/category/add-new'}) %>
+    <section class="main">
+        <h1>Add new category</h1>
+        
+        <form action="/category/add-new" method="post">
+            <div class="feild">
+                <label for="name">Name*</label>
+                <input type="text" required name="name" id="name" value="<%= locals.name %>" placeholder="Action, etc">
+            </div>
+            
+            <div class="feild">
+                <label for="desc">Description*</label>
+                <textarea name="disc" required id="desc" rows="8" placeholder="Some description about the category"><%= locals.disc %></textarea>
+            </div>
+            
+            <div class="feild">
+                <label for="img_url">Category Image URL*</label>
+                <input type="url" required name="img_url" value="<%= locals.img_url %>" id="img_url" placeholder="URL for the category image">
+            </div>
+            
+            <div class="feild">
+                <label for="password">Admin Password*</label>
+                <input type="password" value="<%= locals.password %>" required name="password" id="password">
+            </div>
+
+            <%if(locals.errors) {%>
+                <ul>
+                    <% locals.errors.forEach(err=>{%>
+                        <li><%= err.msg %></li>
+                    <%}) %>
+                </ul>
+            <%}%>
+
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </section>
+    <%- include('footer')%>
+</body>
+
+</html>

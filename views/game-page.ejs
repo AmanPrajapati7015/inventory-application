@@ -18,7 +18,7 @@
             <p><%=locals.disc%></p>
             <div class="categories">
                 <% locals.category.forEach(cate => {%>
-                    <a href="/category/<%= cate.id %>">
+                    <a href="/category/category-page/<%= cate.id %>">
                         <button class="category"><%= cate.name %></button>
                     </a>
                 <% }); %>
