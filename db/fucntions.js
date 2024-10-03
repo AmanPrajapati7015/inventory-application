@@ -25,6 +25,27 @@ async function getGameById(id) {
     return game;
 } 
 
+async function addGame({name,disc,category,price,stock,logo_img_url,cover_img_url, publisher, release_date, rating}) {
+
+    // insert the game
+    let query = `INSERT INTO items (name, logo_img_url, cover_img_url, disc, price, rating, publisher, release_date, stock) 
+                VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`;
+    let values = [name, logo_img_url, cover_img_url, disc, price, rating, publisher, release_date, stock];
+    await pool.query(query, values);
+
+    // extract the unique id of game
+    const { rows : selectRows} = await pool.query('select id from items where name=$1 and disc=$2', [name, disc]);
+    const game_id = selectRows[0].id;
+
+    // insert the category_id into game_category table
+    for(let category_id in category){
+        await pool.query('insert into game_category (game_id, category_id) values ($1, $2)', [game_id, category[category_id]]);
+    }
+
+    console.log(game_id);
+    return game_id;
+}
+
 async function getCategoryById(id) {
     const {rows : category_rows} = await pool.query('SELECT * FROM category where id=$1',[id]);
 
@@ -46,4 +67,5 @@ async function getCategories() {
 
 
 
-module.exports = {getGames, getGameById, getCategoryById, getCategories}
+
+module.exports = {getGames, getGameById, getCategoryById, getCategories,addGame}

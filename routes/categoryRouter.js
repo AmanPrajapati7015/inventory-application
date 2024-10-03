@@ -13,7 +13,10 @@ router.get('/', async(req, res)=>{
 router.get('/:id', async(req, res)=>{
     const id = req.params.id;
     const category = await getCategoryById(id);
-    res.render('category-page', category);
+    if(!category.id)
+        res.send('error');
+    else
+        res.render('category-page', category);
 })
 
 

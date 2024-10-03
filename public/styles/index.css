@@ -11,9 +11,8 @@ body{
 }
 
 nav{
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
-    margin: auto;
     padding: 20px; 
     position: sticky;
     top: 0;
@@ -56,7 +55,7 @@ footer{
 footer .info{
     max-width: 1200px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px 0;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -66,9 +65,7 @@ footer .info a{
     color: rgb(0, 162, 255);
 }
 
-footer .design{
-    /* background-color: blue; */
-}
+
 
 footer .design img{
     width: 100%;

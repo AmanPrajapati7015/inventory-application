@@ -1,5 +1,5 @@
 const express = require('express');
-const { getGames, getGameById, getCategories} = require('../db/fucntions');
+const { getGames, getGameById, getCategories, addGame} = require('../db/fucntions');
 const addNewGameValidator = require('../utils/new-game-validator');
 const {validationResult} = require('express-validator');
 
@@ -15,7 +15,10 @@ router.get('/', async (req, res)=>{
 router.get('/game-page/:id', async(req, res)=>{
     const id = req.params.id;
     const game = await getGameById(+id);
-    res.render('game-page', game);
+    if(!game.id)
+        res.send('error');
+    else
+        res.render('game-page', game);
 })
 
 router.get('/add-new', async(req, res)=>{
@@ -28,14 +31,11 @@ router.post('/add-new',addNewGameValidator, async (req, res)=>{
     const categories = await getCategories();
     
     if(result.errors.length == 0){
-        console.log(result);
-        res.send('added');
+        const id = await addGame(req.body);
+        res.redirect('/games/game-page/'+id);
     }
     else{
-        console.log(result.errors);
-
-        // res.send(result.errors)
-        
+        console.log(result.errors);        
         res.render('add-new-game', {...req.body, errors:result.errors, categories});
     }
 }) 
