@@ -36,5 +36,4 @@ app.listen(3000, ()=>{
 
 
 // todo
-// 6. make a homepage
 // 1. design a navbar for mobile phone
