@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/', async (req, res)=>{
     const games = await getGames();
-    res.render('games', {games, active:'/games'});
+    res.render('games', {games});
 })
 
 router.get('/game-page/:id', async(req, res, next)=>{

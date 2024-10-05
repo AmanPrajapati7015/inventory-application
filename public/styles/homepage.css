@@ -1,0 +1,51 @@
+#bgVideo{
+    object-fit: cover;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 200px 20px 0;
+}
+
+.container .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container h1 , .container p{
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.container button{
+    color: white;
+    font-size: 1rem;
+    background-color: rgb(37, 37, 37);
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.container button:hover{
+    background-color: rgb(45, 45, 45);
+
+}

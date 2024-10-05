@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res)=>{
-    res.send('hello world');
+    res.render('homepage');
 })
 
 app.use('/games', gameRouter);

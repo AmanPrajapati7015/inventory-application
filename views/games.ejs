@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/grid.css">
 </head>
 <body>
-    <%- include('navbar') %>
+    <%- include('navbar', {active:'/games'}) %>
     <div class="container">
         <% locals.games.forEach(game => {%>
             <a href="/games/game-page/<%= game.id %>">

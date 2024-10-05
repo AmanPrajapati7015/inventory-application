@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/homepage.css">
+</head>
+<body>
+    <%- include('navbar', {active:'/'}) %>
+    <div class="bg-container">
+        <video  autoplay muted loop id="bgVideo" src="/homepageVideo.mp4" type="video/mp4"> </video>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1>Video Games Inventory</h1>
+            <p>The adventure never ends: Expand your world, one game at a time.</p>
+            <a class="cta" href="/category"> 
+                <button>Explore categories</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

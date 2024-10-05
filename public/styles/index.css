@@ -50,16 +50,16 @@ a{
 }
 
 footer{
-    /* position: absolute; */
+    position: relative;
     bottom: 0;
     margin-top: 80px;
-    /* width: 100vw; */
+    height: 300px;
 }
 
 footer .info{
     max-width: 1200px;
     box-sizing: border-box;
-    padding: 20px 0;
+    padding: 20px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -72,6 +72,8 @@ footer .info a{
 
 
 footer .design img{
+    position: absolute;
+    bottom: 0;
     width: 100%;
     transform : rotate(180deg);
 }
