@@ -11,7 +11,7 @@
     <%- include('navbar', {active:'/games'}) %>
     <div class="container">
         <% locals.games.forEach(game => {%>
-            <a href="/games/game-page/<%= game.id %>">
+            <a href="/games/game-page/<%= game.game_id %>">
                 <div class="card" style="background-image: url('<%= game.cover_img_url%>');">
                     <div class="black-tint">
                         <h2><%= game.name %></h2>

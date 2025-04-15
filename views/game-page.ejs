@@ -11,10 +11,10 @@
     <%- include('navbar') %>
     <section class="main">
         <div class="left">
-            <img src="<%= locals.cover_img_url %>" width="100%" alt="<%=locals.name%>">
+            <img src="<%= locals.cover_img %>" width="100%" alt="<%=locals.name%>">
         </div>
         <div class="right">
-            <img src="<%= locals.logo_img_url %>" height="40px" alt="<%=locals.name%>">
+            <img src="<%= locals.logo_img %>" height="40px" alt="<%=locals.name%>">
             <p><%=locals.disc%></p>
             <div class="categories">
                 <% locals.category.forEach(cate => {%>
@@ -26,8 +26,7 @@
             <h2>₹ <%=locals.price%></h2>
             <p><strong>Rating : </strong><%=locals.rating%></p>
             <p><strong>Publisher : </strong><%=locals.publisher%></p>
-            <p><strong>Released : </strong><%=locals.release_date%></p>
-            <p><em>Units available in stock: </em> <%= locals.stock %></p>
+            <p><strong>Released on : </strong><%=locals.release_date.toLocaleDateString()%></p>
         </div>
     </section>
     <%- include('footer')%>

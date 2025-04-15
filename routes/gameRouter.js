@@ -15,7 +15,7 @@ router.get('/', async (req, res)=>{
 router.get('/game-page/:id', async(req, res, next)=>{
     const id = req.params.id;
     const game = await getGameById(+id);
-    if(!game.id)
+    if(!game.game_id)
         next(new Error('invalid game id'));
     else
         res.render('game-page', game);
