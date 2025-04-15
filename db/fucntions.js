@@ -14,7 +14,11 @@ async function getGames() {
 // Get a game by ID (full info + categories)
 async function getGameById(id) {
     const { rows: game_rows } = await pool.query('SELECT * FROM games WHERE game_id = $1', [id]);
-    let pub_id = +game_rows[0].publisher_id;
+    
+    let pub_id = 1;
+    if(game_rows[0]) 
+        pub_id = game_rows[0].publisher_id
+
     const { rows: publisher_rows} = await pool.query('SELECT * FROM publisher WHERE publisher_id = $1', [pub_id])
     
     const { rows: category } = await pool.query(
@@ -30,22 +34,27 @@ async function getGameById(id) {
 }
 
 // Add a new game
-async function addGame({ name, category, price, stock, logo_img_url, cover_img_url, publisher_id, release_date, rating, pg_rating }) {
-    // Insert the game
+async function addGame({name, publisher, category, price, logo_img_url, cover_img_url, release_date, rating}) {
+
     let query = `
         INSERT INTO games 
-            (name, logo_img, cover_img, price, rating, pg_rating, release_date, publisher_id) 
+            (name, logo_img, cover_img, price, rating, release_date, publisher_id) 
         VALUES 
-            ($1, $2, $3, $4, $5, $6, $7, $8)
+            ($1, $2, $3, $4, $5, $6, $7)
         RETURNING game_id`;
     
-    let values = [name, logo_img_url, cover_img_url, price, rating, pg_rating, release_date, publisher_id];
+    let values = [name, logo_img_url, cover_img_url, price, rating, release_date, publisher];
+
+
     const { rows } = await pool.query(query, values);
     const game_id = rows[0].game_id;
 
-    // Insert category mappings
-    for (let category_id of category) {
-        await pool.query('INSERT INTO game_category (game_id, category_id) VALUES ($1, $2)', [game_id, category_id]);
+    console.log(game_id);
+    
+
+    // // Insert category mappings
+    for (let cat_id of category) {
+        await pool.query('INSERT INTO game_cat (game_id, cat_id) VALUES ($1, $2)', [game_id, cat_id]);
     }
 
     return game_id;
@@ -76,18 +85,19 @@ async function getCategories() {
 
 // Add new category
 async function addCategory({ name, disc, img_url }) {
-    await pool.query(
-        'INSERT INTO category (name, imgurl, disc) VALUES ($1, $2, $3)',
+    const {rows: cat} = await pool.query(
+        'INSERT INTO categories (cat_name, imgurl, description) VALUES ($1, $2, $3) returning cat_id',
         [name, img_url, disc]
     );
 
-    const { rows: selectRows } = await pool.query(
-        'SELECT id FROM category WHERE name = $1 AND disc = $2',
-        [name, disc]
-    );
-
-    return selectRows[0].id;
+    return cat[0].cat_id;
 }
+
+async function getPublishers() {
+    const {rows} = await pool.query('SELECT  publisher_id, pub_name  FROM publisher');
+    return rows;
+}
+
 
 module.exports = {
     getGames,
@@ -96,4 +106,5 @@ module.exports = {
     getCategoryById,
     getCategories,
     addCategory,
+    getPublishers,
 };

@@ -20,10 +20,17 @@
                 <input type="text" required name="name" id="name" value="<%= locals.name %>" placeholder="Grand Theft Auto, etc">
             </div>
             
+
             <div class="feild">
-                <label for="desc">Description*</label>
-                <textarea name="disc" required id="desc" rows="8" placeholder="Some description about the game"><%= locals.disc %></textarea>
+                <label for="desc">Publisher *</label>
+                <select  name="publisher" id="publisher" required>
+                    <% locals.publishers.forEach(pub=>{ %>   
+                        <option value="<%=pub.publisher_id%>"><%=pub.pub_name%></option>
+                    <% }) %>
+                </select>
+
             </div>
+
 
             <div class="feild">
                 <label>Categories*</label>
@@ -43,11 +50,6 @@
             </div>
             
             <div class="feild">
-                <label for="stock">Stock*</label>
-                <input type="number" required name="stock" value="<%= locals.stock %>" id="stock" placeholder="Number of items in stock" min="0">
-            </div>
-            
-            <div class="feild">
                 <label for="titleLogo">Title Logo URL*</label>
                 <input type="url" required name="logo_img_url" value="<%= locals.logo_img_url %>" id="titleLogo" placeholder="URL for the title logo">
             </div>
@@ -57,10 +59,6 @@
                 <input type="url" required name="cover_img_url" value="<%= locals.cover_img_url %>" id="heroLogo" placeholder="URL for the hero logo">
             </div>
             
-            <div class="feild">
-                <label for="publisher">Publisher*</label>
-                <input type="text" required name="publisher" value="<%= locals.publisher %>" id="publisher" placeholder="Publisher Name">
-            </div>
             
             <div class="feild">
                 <label for="releaseDate">Release Date*</label>

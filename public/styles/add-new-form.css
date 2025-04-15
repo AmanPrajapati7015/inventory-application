@@ -27,7 +27,7 @@ form > .feild >label{
     font-weight: 700;
 }
 
-form > .feild > input, textarea{
+form > .feild > input, textarea, select{
     padding: 8px;
     background-color: rgb(40, 40, 40);
     font-size: 1rem;
@@ -35,6 +35,9 @@ form > .feild > input, textarea{
     border: none;
     outline: none;
     border-radius: 5px;
+}
+form  .feild  select{
+    outline: none;
 }
 
 
