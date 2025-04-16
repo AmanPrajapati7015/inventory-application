@@ -1,22 +1,39 @@
 const  express = require('express');
+const session = require('express-session');
+
 const gameRouter = require('./routes/gameRouter');
 const categoryRouter = require('./routes/categoryRouter');
-const { render } = require('ejs');
+const authRoutes = require('./routes/authRouter');
 
 
 
 const app = express();
+
 app.set('view engine', 'ejs'); 
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}))
+app.use(session({
+    secret: 'secret123',
+    resave: false,
+    saveUninitialized: false
+}));
+
+// Make user available in all EJS templates
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
 
 app.get('/', (req, res)=>{
     res.render('homepage');
 })
 
-app.use('/games', gameRouter);
 
+
+app.use('/auth', authRoutes);
+
+app.use('/games', gameRouter);
 
 app.use('/category', categoryRouter);
 

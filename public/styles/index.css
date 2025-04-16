@@ -11,10 +11,78 @@ body{
     position: relative;
 }
 
+.main-navbar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    background-color: #12121276;
+    z-index: 1;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+.navbar-links li.active {
+    border-bottom: 2px solid #a259ff;
+}
+
+.navbar-links li a {
+    color: white;
+    transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+    color: #a259ff;
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-btn {
+    color: white;
+    border: 1px solid #a259ff;
+    border-radius: 20px;
+    padding: 6px 18px;
+    margin-left: 8px;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+
+.navbar-btn:hover {
+    background: #a259ff;
+    color: #fff;
+}
+
+.navbar-username {
+    margin-right: 10px;
+    font-weight: 500;
+    color: #a259ff;
+}
+
 nav{
     width: 100%;
     box-sizing: border-box;
-    padding: 20px; 
+    padding: 20px;
     position: sticky;
     top: 0;
     backdrop-filter: blur(5px);

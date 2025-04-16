@@ -6,14 +6,23 @@
     {link:'/games/add-new', text:'New game'}
 ] %>
 
-<nav>
-    <div class="content">
-        <ul>
+<nav class="main-navbar">
+    <div class="navbar-content">
+        <ul class="navbar-links">
             <% links.forEach((link,i)=>{ %>
-                <li class='<%= link.link == locals.active ? 'active' : '' %>' >
+                <li class='<%= link.link == locals.active ? "active" : "" %>'>
                     <a href="<%= link.link %>"><%= link.text %></a>
                 </li>
             <% }) %>
         </ul>
+        <div class="auth-links">
+            <% if (typeof user !== 'undefined' && user && user.cust_name) { %>
+                <span class="navbar-username">Welcome, <%= user.cust_name %></span>
+                <a href="/auth/logout" class="navbar-btn">Logout</a>
+            <% } else { %>
+                <a href="/auth/login" class="navbar-btn">Login</a>
+                <a href="/auth/signup" class="navbar-btn">Signup</a>
+            <% } %>
+        </div>
     </div>
 </nav>

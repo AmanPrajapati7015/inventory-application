@@ -63,7 +63,7 @@ async function addGame({name, publisher, category, price, logo_img_url, cover_im
 // Get a category and its games
 async function getCategoryById(id) {
     const { rows: category_rows } = await pool.query('SELECT cat_id as id, description as disc, cat_name as name, imgurl FROM categories WHERE cat_id = $1', [id]);
-    console.log(category_rows);
+
     
     const { rows: games } = await pool.query(
         `SELECT games.game_id AS id, games.name, games.logo_img AS logo_img_url FROM games 

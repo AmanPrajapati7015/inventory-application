@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <style>
+        .auth-form-container {
+            max-width: 400px;
+            margin: 60px auto 0 auto;
+            background: #181818;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #00000030;
+            padding: 32px 32px 24px 32px;
+            color: white;
+        }
+        .auth-form-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .auth-form-group {
+            margin-bottom: 18px;
+        }
+        .auth-form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .auth-form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: none;
+            background: #232323;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 2px;
+            box-sizing: border-box;
+        }
+        .auth-form-group input:focus {
+            outline: 2px solid #a259ff;
+        }
+        .auth-submit-btn {
+            width: 100%;
+            padding: 10px 0;
+            border-radius: 20px;
+            border: 1px solid #a259ff;
+            background: transparent;
+            color: #a259ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .auth-submit-btn:hover {
+            background: #a259ff;
+            color: #fff;
+        }
+        .auth-form-footer {
+            text-align: center;
+            margin-top: 18px;
+        }
+        .auth-form-footer a {
+            color: #a259ff;
+        }
+    </style>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="auth-form-container">
+        <h2>Login</h2>
+        <form action="/auth/login" method="POST">
+            <div class="auth-form-group">
+                <label for="cust_name">Username</label>
+                <input type="text" id="cust_name" name="cust_name" required>
+            </div>
+            <div class="auth-form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="auth-submit-btn">Login</button>
+        </form>
+        <div class="auth-form-footer">
+            Don't have an account? <a href="/auth/signup">Sign up here</a>
+        </div>
+    </div>
+</body>
+</html>
