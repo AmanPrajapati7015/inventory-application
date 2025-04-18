@@ -5,6 +5,7 @@ const gameRouter = require('./routes/gameRouter');
 const categoryRouter = require('./routes/categoryRouter');
 const authRoutes = require('./routes/authRouter');
 const cartRouter = require('./routes/cartRouter');
+const orderRouter = require('./routes/orderRouter')
 
 
 
@@ -46,6 +47,8 @@ app.use('/games', gameRouter);
 app.use('/category', categoryRouter);
 
 app.use('/cart',checkLogedIn ,cartRouter);
+
+app.use('/order',checkLogedIn ,orderRouter);
  
  
 app.get('*', (req, res, next)=>{

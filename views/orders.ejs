@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Orders</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/orders.css">
+</head>
+
+<body>
+    <%- include('navbar') %>
+
+        <section class="main">
+            <h1>Your Orders</h1>
+
+            <% if (orders.length===0) { %>
+                <div class="empty-message">You have not placed any order.</div>
+                <% } else { %>
+                    <div class="order-list">
+                        <% orders.forEach(order=> { %>
+                            <div class="order-card" onclick="window.location.href='/order/<%= order.order_id %>'">
+                                <p><strong>Order ID:</strong>
+                                    <%= order.order_id %>
+                                </p>
+                                <p><strong>Date:</strong>
+                                    <%= new Date(order.date).toLocaleString() %>
+                                </p>
+                                <p><strong>Amount:</strong> ₹<%= order.amount %>
+                                </p>
+                                <p><strong>Payment Method:</strong>
+                                    <%= order.payment_method %>
+                                </p>
+                                <p><strong>Transaction Number:</strong>
+                                    <%= order.transaction_number %>
+                                </p>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <% } %>
+        </section>
+        <%- include('footer') %>
+
+</body>
+
+</html>

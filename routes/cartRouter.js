@@ -53,7 +53,8 @@ router.post('/remove', ensureCart, (req, res) => {
 
 // Place order (checkout)
 router.post('/checkout', ensureCart, async (req, res) => {
-    const customerId = req.session.user.cust_id; 
+    const customerId = +req.session.user.cust_id;
+     
     const cart = req.session.cart;
 
     const result  =  await placeOrder(customerId, cart, "online payment");

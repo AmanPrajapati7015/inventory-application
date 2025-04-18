@@ -112,6 +112,14 @@ nav ul li.active{
 }
 
 
+section.main{
+    max-width: 1200px;
+    margin: auto;
+    min-height: calc(100vh - 490px);
+}
+
+
+
 a{
     text-decoration: none;
     color: white

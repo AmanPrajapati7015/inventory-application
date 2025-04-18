@@ -19,6 +19,7 @@
             <% if (typeof user !== 'undefined' && user && user.cust_name) { %>
                 <span class="navbar-username">Welcome, <%= user.cust_name %></span>
                 <a href="/cart" class="navbar-btn"> Cart </a>
+                <a href="/order" class="navbar-btn"> Order </a>
                 <a href="/auth/logout" class="navbar-btn">Logout</a>
             <% } else { %>
                 <a href="/auth/login" class="navbar-btn">Login</a>

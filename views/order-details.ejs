@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order #<%= order.order_id %></title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/cart.css">
+</head>
+<body>
+    <%- include('navbar') %>
+
+    <section class="cart-container main">
+        <% if (order.items.length === 0) { %>
+            <p>This order has no items.</p>
+        <% } else { %>
+            <div class="cart-list">
+                <% order.items.forEach(game => { %>
+                    <div class="cart-card">
+                        <img src="<%= game.cover_img %>" alt="<%= game.name %>">
+                        <div class="cart-details">
+                            <h3><%= game.name %></h3>
+                            <p>₹ <%= game.price %></p>
+                            <p><strong>Publisher:</strong> <%= game.publisher %></p>
+                            <p><strong>Rating:</strong> <%= game.rating %></p>
+                            <p><strong>Release:</strong> <%= new Date(game.release_date).toLocaleDateString() %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <p><strong>Order ID:</strong> <%= order.order_id %></p>
+                <p><strong>Date:</strong> <%= new Date(order.date).toLocaleString() %></p>
+                <p><strong>Total Amount:</strong> ₹ <%= order.amount %></p>
+                <p><strong>Payment Method:</strong> <%= order.payment_method %></p>
+                <p><strong>Transaction No.:</strong> <%= order.transaction_number %></p>
+            </div>
+        <% } %>
+    </section>
+
+    <%- include('footer') %>
+</body>
+</html>

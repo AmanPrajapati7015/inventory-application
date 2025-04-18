@@ -67,15 +67,15 @@ async function getGamesWithDetails() {
 // 2b. Get order details - checked
 async function getOrderDetails(order_id) {
     const res = await client.query(
-      `SELECT o.order_id, o.date, o.amount, c.cust_name, 
-              ARRAY_AGG(g.name) AS games, p.payment_method, p.transaction_number
+      `SELECT o.order_id, o.date, o.amount,  
+              ARRAY_AGG(g.game_id) AS games, p.payment_method, p.transaction_number
        FROM "order" o 
        JOIN Customer c ON o.cust_id = c.cust_id 
        JOIN game_order go ON o.order_id = go.order_id 
        JOIN Games g ON go.game_id = g.game_id 
        JOIN payment p ON o.payment_id = p.payment_id 
        WHERE o.order_id = $1
-       GROUP BY o.order_id, o.date, o.amount, c.cust_name, p.payment_method, p.transaction_number`,
+       GROUP BY o.order_id, o.date, o.amount,  p.payment_method, p.transaction_number`,
       [order_id]
     );
 
@@ -116,7 +116,7 @@ async function addGame(name, price, publisher_id, category_ids, rating, pg_ratin
 
 // 5. Get past orders of a customer -checked
 async function getCustomerOrders(cust_id) {
-    const res = await client.query(
+    const res = await  client.query(
       `SELECT order_id FROM "order" WHERE cust_id = $1`,
       [cust_id]
     );
@@ -139,16 +139,16 @@ connectDB();
 
 // await addCustomer("abhishek", "aman7015", "2004-12-15")
 
-// await getOrderDetails("2");
+// await getOrderDetails("5");
 
-// await getCustomerOrders("1");
+await getCustomerOrders("5");
 
 // await placeOrder(5, [1,2,4], "Debig Card");
 
 
 
 // await addGame("GOT", 199.99, 1, [1,2,3], 4.9, "M", new Date());
-await addGame("kk", 22, 3, [2,3,4], 5, "M", new Date());
+// await addGame("kk", 22, 3, [2,3,4], 5, "M", new Date());
 
 
 

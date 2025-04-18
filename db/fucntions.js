@@ -14,13 +14,13 @@ async function getGames() {
 // Get a game by ID (full info + categories)
 async function getGameById(id) {
     const { rows: game_rows } = await pool.query('SELECT * FROM games WHERE game_id = $1', [id]);
-    
+
     let pub_id = 1;
-    if(game_rows[0]) 
+    if (game_rows[0])
         pub_id = game_rows[0].publisher_id
 
-    const { rows: publisher_rows} = await pool.query('SELECT * FROM publisher WHERE publisher_id = $1', [pub_id])
-    
+    const { rows: publisher_rows } = await pool.query('SELECT * FROM publisher WHERE publisher_id = $1', [pub_id])
+
     const { rows: category } = await pool.query(
         `SELECT categories.cat_id as id, categories.cat_name as name FROM games 
          JOIN game_cat ON game_cat.game_id = games.game_id
@@ -29,12 +29,12 @@ async function getGameById(id) {
         [id]
     );
 
-    let game = { ...game_rows[0], publisher:publisher_rows[0].pub_name, category };
+    let game = { ...game_rows[0], publisher: publisher_rows[0].pub_name, category };
     return game;
 }
 
 // Add a new game
-async function addGame({name, publisher, category, price, logo_img_url, cover_img_url, release_date, rating}) {
+async function addGame({ name, publisher, category, price, logo_img_url, cover_img_url, release_date, rating }) {
 
     let query = `
         INSERT INTO games 
@@ -42,7 +42,7 @@ async function addGame({name, publisher, category, price, logo_img_url, cover_im
         VALUES 
             ($1, $2, $3, $4, $5, $6, $7)
         RETURNING game_id`;
-    
+
     let values = [name, logo_img_url, cover_img_url, price, rating, release_date, publisher];
 
 
@@ -50,7 +50,6 @@ async function addGame({name, publisher, category, price, logo_img_url, cover_im
     const game_id = rows[0].game_id;
 
     console.log(game_id);
-    
 
     // // Insert category mappings
     for (let cat_id of category) {
@@ -64,7 +63,7 @@ async function addGame({name, publisher, category, price, logo_img_url, cover_im
 async function getCategoryById(id) {
     const { rows: category_rows } = await pool.query('SELECT cat_id as id, description as disc, cat_name as name, imgurl FROM categories WHERE cat_id = $1', [id]);
 
-    
+
     const { rows: games } = await pool.query(
         `SELECT games.game_id AS id, games.name, games.logo_img AS logo_img_url FROM games 
          JOIN game_cat ON game_cat.game_id = games.game_id
@@ -85,7 +84,7 @@ async function getCategories() {
 
 // Add new category
 async function addCategory({ name, disc, img_url }) {
-    const {rows: cat} = await pool.query(
+    const { rows: cat } = await pool.query(
         'INSERT INTO categories (cat_name, imgurl, description) VALUES ($1, $2, $3) returning cat_id',
         [name, img_url, disc]
     );
@@ -94,7 +93,7 @@ async function addCategory({ name, disc, img_url }) {
 }
 
 async function getPublishers() {
-    const {rows} = await pool.query('SELECT  publisher_id, pub_name  FROM publisher');
+    const { rows } = await pool.query('SELECT  publisher_id, pub_name  FROM publisher');
     return rows;
 }
 
@@ -105,6 +104,45 @@ async function placeOrder(user_id, game_ids, payment_method) {
 }
 
 
+async function getOrderDetails(order_id) {
+    const res = await pool.query(
+        `SELECT 
+            o.order_id, o.cust_id, o.date,
+            ARRAY_AGG(go.game_id) as games, 
+            o.amount, p.payment_method, p.transaction_number, p.payment_id
+        FROM "order" o 
+        JOIN game_order go ON o.order_id = go.order_id
+        JOIN payment p ON p.payment_id=o.payment_id
+        WHERE o.order_id = $1
+        GROUP BY o.order_id, o.cust_id, o.date, o.amount, p.payment_method, p.transaction_number, p.payment_id`,
+        [order_id]
+    );
+    return res.rows[0];
+}
+
+async function getCustomerOrders(cust_id) {
+    const res = await pool.query(
+        `SELECT order_id FROM "order" WHERE cust_id = $1`,
+        [cust_id]
+    );
+
+    let orders = [];
+    for (let row of res.rows) {
+        const orderDetails = await getOrderDetails(row.order_id);
+        orders.push(orderDetails);
+    }
+
+    return orders;
+}
+ 
+
+
+
+
+
+
+
+
 module.exports = {
     getGames,
     getGameById,
@@ -113,5 +151,7 @@ module.exports = {
     getCategories,
     addCategory,
     getPublishers,
-    placeOrder
+    placeOrder,
+    getCustomerOrders,
+    getOrderDetails,
 };
