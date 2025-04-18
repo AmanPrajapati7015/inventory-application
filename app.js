@@ -4,6 +4,7 @@ const session = require('express-session');
 const gameRouter = require('./routes/gameRouter');
 const categoryRouter = require('./routes/categoryRouter');
 const authRoutes = require('./routes/authRouter');
+const cartRouter = require('./routes/cartRouter');
 
 
 
@@ -25,6 +26,13 @@ app.use((req, res, next) => {
     next();
 });
 
+function checkLogedIn(req, res,  next){
+    if(req.session.user )
+        next();
+    else
+        res.redirect('/auth/login');
+}
+
 app.get('/', (req, res)=>{
     res.render('homepage');
 })
@@ -37,6 +45,9 @@ app.use('/games', gameRouter);
 
 app.use('/category', categoryRouter);
 
+app.use('/cart',checkLogedIn ,cartRouter);
+ 
+ 
 app.get('*', (req, res, next)=>{
     next(new Error('Invalid URL'))
 })

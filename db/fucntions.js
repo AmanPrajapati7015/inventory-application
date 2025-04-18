@@ -98,6 +98,12 @@ async function getPublishers() {
     return rows;
 }
 
+async function placeOrder(user_id, game_ids, payment_method) {
+    const query = 'SELECT place_order($1, $2, $3)';
+    const result = await pool.query(query, [user_id, game_ids, payment_method]);
+    return result.rows;
+}
+
 
 module.exports = {
     getGames,
@@ -107,4 +113,5 @@ module.exports = {
     getCategories,
     addCategory,
     getPublishers,
+    placeOrder
 };

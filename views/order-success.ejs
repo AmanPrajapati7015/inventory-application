@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Success</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: #1b1b1b;
+            border: 1px solid #f1c40f;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            color: #f1f1f1;
+        }
+
+        .success-container h2 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .home-btn {
+            padding: 12px 24px;
+            background-color: #f1c40f;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .home-btn:hover {
+            background-color: #d4ac0d;
+        }
+    </style>
+</head>
+<body>
+    <%- include('navbar') %>
+
+    <div class="success-container">
+        <h2>Order Placed Successfully!</h2>
+        <div class="success-message">
+            Order placed successfully with ID: <strong><%= order_id %></strong><br>
+            Total amount: ₹ <strong><%= total_amount %></strong><br>
+            Transaction number: <strong><%= transaction_number %></strong><br>
+            Payment ID: <strong><%= payment_id %></strong>
+        </div>
+        <a href="/" class="home-btn">Go to Home</a>
+    </div>
+
+    <%- include('footer') %>
+</body>
+</html>

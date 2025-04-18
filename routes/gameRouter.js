@@ -17,7 +17,9 @@ router.get('/game-page/:id', async(req, res, next)=>{
     const game = await getGameById(+id);
     if(!game.game_id)
         next(new Error('invalid game id'));
-    else        res.render('game-page', game);
+    else
+        game.id = id;
+        res.render('game-page', game);
 })
 
 router.get('/add-new', async(req, res)=>{

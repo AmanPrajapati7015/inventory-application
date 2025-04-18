@@ -27,6 +27,12 @@
             <p><strong>Rating : </strong><%=locals.rating%></p>
             <p><strong>Publisher : </strong><%=locals.publisher%></p>
             <p><strong>Released on : </strong><%=locals.release_date.toLocaleDateString()%></p>
+
+            <form action="/cart/add" method="POST">
+                <input type="hidden" name="game_id" value="<%= locals.id %>">
+                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+
         </div>
     </section>
     <%- include('footer')%>
