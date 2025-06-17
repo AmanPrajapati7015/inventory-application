@@ -41,7 +41,7 @@ router.post('/login', async (req, res, next) => {
       req.session.user = result.rows[0];
       res.redirect('/');
     } else {
-      res.send('Invalid credentials');
+      next(new Error('Invalid credentials'));
     }
   } catch (err) {
     next(new Error(err.message));
